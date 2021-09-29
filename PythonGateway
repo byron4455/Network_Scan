@@ -1,0 +1,10 @@
+import os
+import subprocess
+
+def find_gateway():
+import os
+import subprocess
+from subprocess import PIPE, run
+command = ['ipconfig']
+result = run(command, stdout=PIPE, stderr=PIPE, universal_newlines=True)
+print(result.returncode, result.stdout, result.stderr)
