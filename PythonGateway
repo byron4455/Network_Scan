@@ -14,3 +14,14 @@ import socket
 >>> s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 >>> s.connect(("8.8.8.8", 80))
 >>> print(s.getsockname()[0])
+
+
+def get_ip():
+...     import socket
+...     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+...     s.connect(("8.8.8.8", 80))
+...     value = s.getsockname()[0]
+...     return value
+var = get_ip()
+var = var[:var.rfind('.')+1] + '1'
+print(var)
